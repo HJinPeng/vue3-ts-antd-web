@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <a-button>按钮</a-button>
+    <a-button @click="add">按钮</a-button>
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
@@ -16,6 +16,11 @@ export default defineComponent({
   components: {
     HelloWorld,
     // aButton: Button,
+  },
+  methods: {
+    add() {
+      // this.$store.commit("increment");
+    },
   },
 });
 </script>
