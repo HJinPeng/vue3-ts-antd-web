@@ -32,6 +32,6 @@ export const actions: ActionTree<UserState, RootState> = {
     console.log("userInfo", userInfo);
     setTimeout(() => {
       commit(UserMutationTypes.SET_TOKEN, "bear 123439847589");
-    }, 1000);
+    }, 6000);
   },
 };

@@ -1,19 +1,18 @@
 import { createStore } from "vuex";
-import { UserState } from "./modules/user/state";
+import { UserState, store as user, UserStore } from "./modules/user";
 
 export interface RootState {
   user: UserState;
 }
 
-export default createStore({
-  state: {
-    counter: 0,
+export type Store = UserStore<Pick<RootState, "user">>;
+
+export const store = createStore({
+  modules: {
+    user,
   },
-  mutations: {
-    increment(state) {
-      state.counter++;
-    },
-  },
-  actions: {},
-  modules: {},
 });
+
+export function useStore(): Store {
+  return store as Store;
+}

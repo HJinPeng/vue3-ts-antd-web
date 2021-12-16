@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <a-button @click="add">按钮</a-button>
+    <a-button @click="changeToken">修改token</a-button>
+    <div>token: {{ token }}</div>
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
@@ -8,11 +9,35 @@
 
 <script lang="ts">
 // import { Button } from "ant-design-vue";
-import { defineComponent } from "vue";
+import { defineComponent, computed, watch, reactive, toRefs } from "vue";
 import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
+import { useStore } from "@/store";
+import { UserActionTypes } from "@/store/modules/user/action-types";
 export default defineComponent({
   name: "Home",
+  setup() {
+    const store = useStore();
+    const token = computed(() => {
+      return store.state.user.token;
+    });
+    watch(token, (v) => {
+      console.log(v);
+    });
+
+    const state = reactive({
+      changeToken: () => {
+        store.dispatch(UserActionTypes.ACTION_LOGIN, {
+          username: "123",
+          password: "65462",
+        });
+      },
+    });
+
+    return {
+      token,
+      ...toRefs(state),
+    };
+  },
   components: {
     HelloWorld,
     // aButton: Button,
