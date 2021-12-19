@@ -27,9 +27,13 @@ export default defineComponent({
 
 <style lang="less">
 .x-layout {
+  display: flex;
   &__left {
+    width: 256px;
   }
   &__right {
+    flex: 1;
+    // overflow: hidden;
   }
   &__side-menu {
     color: red;
