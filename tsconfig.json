@@ -17,7 +17,16 @@
     "paths": {
       "@/*": [
         "src/*"
-      ]
+      ],
+      "@utils/*": [
+        "src/common/utils"
+      ],
+      "@tool": [
+        "src/common/utils/tool.ts"
+      ],
+      "@comp/*": [
+        "src/components/*"
+      ],
     },
     "lib": [
       "esnext",
