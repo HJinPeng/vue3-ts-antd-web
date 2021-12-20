@@ -1,4 +1,4 @@
-import { ActionContext, ActionTree, Mutation } from "vuex";
+import { ActionContext, ActionTree } from "vuex";
 import { RootState } from "@/store";
 import { UserState } from "./state";
 import { Mutations } from "./mutations";

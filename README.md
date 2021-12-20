@@ -63,3 +63,6 @@ module.exports = {
   }
 };
 ```
+
+### 4. style-resources-loader 注入less变量
+`https://www.npmjs.com/package/style-resources-loader`
