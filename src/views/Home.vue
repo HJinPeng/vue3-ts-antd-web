@@ -2,7 +2,6 @@
   <div class="home">
     <a-button @click="changeToken">修改token</a-button>
     <div>token: {{ token }}</div>
-    <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>

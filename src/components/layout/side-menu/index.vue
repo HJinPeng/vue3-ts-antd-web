@@ -1,15 +1,11 @@
 <template>
   <div :class="bem()">
-    <div :class="bem('header')">
-      <div :class="bem('logo')">logo</div>
-      <h2 :class="bem('title')">vue3</h2>
-    </div>
     <a-menu
       v-model:openKeys="openKeys"
       v-model:selectedKeys="selectedKeys"
       mode="inline"
-      theme="dark"
       :inline-collapsed="collapsed"
+      :class="bem()"
     >
       <a-menu-item key="1">
         <span>option 1</span>
@@ -51,3 +47,14 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="less">
+.x-side-menu {
+  width: @side-menu-width;
+  background-color: @side-menu-color;
+  box-shadow: 2px 0 6px rgba(29, 35, 41, 5%);
+  .ant-menu {
+    background: @side-menu-color;
+  }
+}
+</style>

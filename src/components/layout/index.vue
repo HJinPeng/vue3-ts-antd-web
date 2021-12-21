@@ -1,10 +1,8 @@
 <template>
   <div :class="bem()">
-    <div :class="bem('left')">
+    <Header :class="bem('header')" />
+    <div :class="bem('main')">
       <SideMenu :class="bem('side-menu')" />
-    </div>
-    <div :class="bem('right')">
-      <div :class="bem('header')">header</div>
       <div :class="bem('content')">
         <router-view />
       </div>
@@ -15,9 +13,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { createBem } from "@tool";
+import Header from "./header/index.vue";
 import SideMenu from "./side-menu/index.vue";
 export default defineComponent({
   components: {
+    Header,
     SideMenu,
   },
   setup() {
@@ -32,21 +32,19 @@ export default defineComponent({
 <style lang="less">
 .x-layout {
   display: flex;
+  flex-direction: column;
   height: 100%;
-  &__left {
-    width: 256px;
+  &__header {
   }
-  &__right {
+  &__main {
     flex: 1;
+    display: flex;
   }
   &__side-menu {
     color: red;
-    height: 100%;
-  }
-  &__header {
-    color: @blue;
   }
   &__content {
+    flex: 1;
   }
 }
 </style>
