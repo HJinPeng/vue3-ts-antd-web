@@ -39,9 +39,9 @@ export default defineComponent({
   &__main {
     flex: 1;
     display: flex;
+    overflow: hidden;
   }
   &__side-menu {
-    color: red;
   }
   &__content {
     flex: 1;
